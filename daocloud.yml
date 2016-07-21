@@ -1,0 +1,11 @@
+image: ubuntu:16.04
+
+services:
+    - mongodb
+    - mysql
+    - redis
+
+install:
+    - apt-get update -qq
+    - apt-get upgrade -y -qq
+    - apt-get install apt-utils make wget curl -y -qq
