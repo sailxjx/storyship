@@ -1,0 +1,72 @@
+{
+  "name": "storyship",
+  "version": "0.0.0",
+  "description": "A new way to write stories",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf public/* && cp -rf static/ public && NODE_ENV=production webpack --config tools/webpack.config.js && echo `date '+%Y-%m-%d %H:%M:%S'` > public/.datetime",
+    "deploy": "npm run build && cd public && git add --all && git commit -am 'Site updated' && git push",
+    "start": "node app.js",
+    "lint": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sailxjx/storyship.git"
+  },
+  "author": {
+    "name": "Xu Jingxin",
+    "email": "sailxjx@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sailxjx/storyship/issues"
+  },
+  "homepage": "https://github.com/sailxjx/storyship",
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-eslint": "^6.1.0",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-1": "^6.5.0",
+    "connect-history-api-fallback": "^1.2.0",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "font-awesome": "^4.6.3",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.21.0",
+    "koa": "^1.2.0",
+    "koa-ejs": "^3.0.0",
+    "koa-logger": "^1.3.0",
+    "koa-router": "^5.4.0",
+    "koa-static": "^2.0.0",
+    "koa-webpack-dev-middleware": "^1.2.1",
+    "koa-webpack-hot-middleware": "^1.0.3",
+    "markdown-loader": "^0.1.7",
+    "react": "^15.1.0",
+    "react-css-modules": "^3.7.6",
+    "react-dom": "^15.1.0",
+    "react-hot-loader": "^1.3.0",
+    "react-modal": "^1.4.0",
+    "react-router": "^2.5.2",
+    "style-loader": "^0.13.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.1.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-hot-middleware": "^2.10.0"
+  },
+  "standard": {
+    "rules": {
+      "jsx-quotes": [
+        2,
+        "prefer-single"
+      ]
+    },
+    "parser": "babel-eslint"
+  },
+  "dependencies": {}
+}
