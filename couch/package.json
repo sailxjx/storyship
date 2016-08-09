@@ -1,0 +1,28 @@
+{
+  "name": "storyship-couch",
+  "version": "0.0.0",
+  "description": "Couch designer",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "push": "node ./tasks/push.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sailxjx/storyship.git"
+  },
+  "keywords": [
+    "couchdb",
+    "storyship"
+  ],
+  "author": "Xu Jingxin",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-stage-1": "^6.13.0",
+    "babel-register": "^6.11.6",
+    "chalk": "^1.1.3",
+    "request": "^2.74.0",
+    "standard": "^7.1.2"
+  }
+}
