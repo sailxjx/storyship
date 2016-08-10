@@ -10,7 +10,8 @@ function flatten (app) {
         app[key] = flatten(value)
         break
       case '[object Function]':
-        app[key] = value.toString()
+        // Remove function name in design docs
+        app[key] = value.toString().replace(`function ${key}`, 'function ')
         break
       default:
     }
@@ -20,7 +21,7 @@ function flatten (app) {
 
 module.exports = {
   flatten: flatten,
-  log: function () {
+  info: function () {
     console.log(chalk.green('[info ] ') + util.format.apply(util, arguments))
   },
   error: function () {
