@@ -4,7 +4,7 @@
   "description": "Couch designer",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "istanbul cover _mocha -- -r co-mocha -r should -R spec test/main.js",
     "push": "node ./tasks/push.js"
   },
   "repository": {
@@ -22,8 +22,12 @@
     "babel-preset-stage-1": "^6.13.0",
     "babel-register": "^6.11.6",
     "chalk": "^1.1.3",
+    "co-mocha": "^1.1.3",
+    "istanbul": "^0.4.4",
+    "mocha": "^3.0.2",
     "pouchdb": "^5.4.5",
     "request": "^2.74.0",
+    "should": "^10.0.0",
     "standard": "^7.1.2"
   }
 }
