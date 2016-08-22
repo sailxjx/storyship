@@ -32,24 +32,15 @@ let webpackConfig = {
     ]
   },
   plugins: [
-    new webpack.IgnorePlugin(/^\/paints.*png$/),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new ExtractTextPlugin('style.[contenthash].css'),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
       }
-    })
-  ]
-}
-
-let prod = process.env.NODE_ENV === 'production'
-
-let getHtmlPlugins = function () {
-  let routes = prod ? ['/', '/project', '/paint'] : ['/']
-  return routes.map((route) => {
-    return new HtmlWebpackPlugin({
-      filename: path.join(__dirname, '../public', route, 'index.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: path.join(__dirname, '../public/index.html'),
       template: 'index.html',
       inject: true,
       minify: {
@@ -58,10 +49,10 @@ let getHtmlPlugins = function () {
         removeAttributeQuotes: true
       }
     })
-  })
+  ]
 }
 
-webpackConfig.plugins = webpackConfig.plugins.concat(getHtmlPlugins())
+let prod = process.env.NODE_ENV === 'production'
 
 if (prod) {
   webpackConfig.plugins.unshift(new webpack.DefinePlugin({'process.env': {NODE_ENV: JSON.stringify('production')}}))
