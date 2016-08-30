@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Init package directory
+ * Init component directory
  * Commands:
  * - init <path>  // Init package in the path, use the name of path as the package name
  * - init         // Init package in current directory.

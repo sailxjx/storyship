@@ -31,6 +31,11 @@ let webpackConfig = {
       }
     ]
   },
+  stylus: {
+    import: [
+      path.resolve(__dirname, '../components/app/variables.styl')
+    ]
+  },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new ExtractTextPlugin('style.[contenthash].css'),

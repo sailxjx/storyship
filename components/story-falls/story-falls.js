@@ -9,7 +9,7 @@ import EmbeddedEditor from '../embedded-editor'
 
 class StoryFalls extends React.Component {
   render () {
-    return <div>
+    return <div styleName="root">
       <EmbeddedEditor></EmbeddedEditor>
     </div>
   }
